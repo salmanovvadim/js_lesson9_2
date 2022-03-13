@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+      <script type="text/javascript">
+        var color = generateColor();
+        function generateColor() {
+          return '#' + Math.floor(Math.random() * 16777215).toString(16);
+        }
+
+        $(document).ready(function () {
+          $("form").keypress(function () {
+            $("input").keypress();
+          });
+          $("input").keypress(function () {
+            $("input").css("background-color", color);
+            color = generateColor();;
+          });
+        });
+      </script>
+    </head>
+
+    <body>
+      <form><input class="toggle-color" type="text"></form>
+    </body>
+
+  </html>
